@@ -1,0 +1,28 @@
+
+function service {
+    sudo /etc/init.d/$1 $2
+}
+
+function _servicesfind {
+    for i in /etc/init.d/${1}*
+    do
+        if [ -x $i ]
+        then
+            return 0
+        fi
+    done
+}
+
+function _service_comp {
+
+    local service=${COMP_WORDS[1]}
+
+    _servicesfind $service
+    if [ $? ]
+    then
+        COMPREPLY=$(cd /etc/init.d;echo $service* |grep -v .sh);
+    fi
+
+}
+
+complete -F _service_comp service

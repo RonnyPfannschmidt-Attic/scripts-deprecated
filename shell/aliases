@@ -1,0 +1,25 @@
+
+alias ls="ls --color=auto"
+
+SUDO_ALIASES=(
+    halt
+    reboot
+    pm{erge,aint}
+    etc-update
+    modprobe insmod rmmod
+    iw{list,priv}
+    i{f,w}config
+    ip
+    eix-{sync,update}
+    wpa_cli
+    unicode_start
+    layman
+)
+
+for com in ${SUDO_ALIASES[@]}
+do
+    alias $com="sudo $com"
+done
+
+
+

@@ -1,0 +1,32 @@
+#monotone stuff
+
+MTN_CMD=/usr/bin/mtn
+MTN_DB="~/Projects/mt.Projects.db"
+MTN_KEY="touchbox@r0nnyger.mine.nu"
+
+MTN_SYNCS=(
+    "snip-a-lot.de nu.mine.r0* de.snip* $MTN_KEY" 
+    "r0nnyger.mine.nu nu.mine.r0* de.snip* $MTN_KEY"
+    "ssh://ronny.uberhost.de/$MTN_DB nu.mine.r0nnyger* net.venge.monotone.trac-plugin de.snip-a-lot.web"
+    )
+
+MTN_PUSHS=(
+    "ssh://snip-a-lot.de/$MTN_DB de.snip-a-lot.web nu.mine.r0nnyger.django* net.angrygoats.viewmtn nu.mine.r0nnyger.*"
+)
+##  helps propagating of user specific branches
+
+function mtn { $MTN_CMD -k $MTN_KEY "$@" ; }
+function mtn_wd { mtn -d $MTN_DB "$@" ; }
+function mtn_sync { mtn_pull ; mtn_push ; }
+
+function mtn_push {
+    local i
+    for i in "${MTN_SYNCS[@]}" "${MTN_PUSHS[@]}"
+    do mtn_wd push $i ; done
+}
+
+function mtn_pull {
+    local i
+    for i in "${MTN_PULLS[@]}" "${MTN_SYNCS[@]}"
+    do mtn_wd pull $i ; done
+}

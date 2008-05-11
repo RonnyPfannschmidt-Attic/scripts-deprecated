@@ -1,0 +1,55 @@
+
+PATH="$HOME/bin:$HOME/Projects/mercurial/:$PATH"
+PATH="$HOME/Projects/mercurial/contrib/:$PATH"
+export PATH
+
+PS1="\t | \w $ "
+
+add_pypath() {
+    for path in $@
+    do
+        if [[ ! $PYTHONPATH =~ $path ]]
+        then
+            echo Python path $path
+            PYTHONPATH="$PYTHONPATH:$path"
+        fi
+    done
+}
+
+PYTHONPATH="$PYTHONPATH:."
+
+add_pypath $HOME/Projects/mercurial/ 
+add_pypath $HOME/Projects/pocoo-sandbox/{ghrml,pretty,clevercss}/ 
+add_pypath $HOME/lib/python/
+
+PATHS=(
+    pygments
+    genshi
+    jinja{,2}
+    sqlalchemy/lib
+    elixir
+    pocoo
+    werkzeug
+    FormEncode
+    paste
+    wtforms
+
+)
+for d in ${PATHS[@]}
+do
+    add_pypath "$HOME/Projects/web/$d/"
+done
+
+export PYTHONPATH
+
+. /etc/bash_completion
+
+for file in $S_SCRIPTDIR/functions/*
+do
+    . $file
+done
+
+unset file
+
+. $S_SCRIPTDIR/aliases
+
