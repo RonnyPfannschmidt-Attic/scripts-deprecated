@@ -65,7 +65,14 @@ au BufEnter,BufNewFile,BufRead *.template set sw=2 sts=2 ts=2 expandtab filetype
 au BufEnter,BufNewFile,BufRead *templates/*.html set filetype=htmldjango sw=2 sts=2 ts=2 expandtab
 au BufEnter,BufNewFile,BufRead *.jinja set filetype=htmldjango sw=2 sts=2 ts=2 expandtab
 au BufEnter,BufNewFile,BufRead *.rst set filetype=rest sw=2 sts=2 ts=2 expandtab
-au BufEnter,BufNewFile,BufRead *.vala set filetype=cs sw=4 sts=4 ts=4 expandtab
+
+
+
+autocmd BufRead *.vala set efm=%f:%l.%c-%[%^:]%#:\ %t%[%^:]%#:\ %m
+autocmd BufRead *.vapi set efm=%f:%l.%c-%[%^:]%#:\ %t%[%^:]%#:\ %m
+au BufRead,BufNewFile *.vala            setfiletype vala
+au BufRead,BufNewFile *.vapi            setfiletype vala
+
 
 imap <unique> <C-b> <Plug>Jumper
 set list listchars=tab:>-,trail:.,extends:>

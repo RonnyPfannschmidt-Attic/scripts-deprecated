@@ -68,7 +68,7 @@ function! GetPythonFold(lnum)
     endif
 
     " Classes and functions get their own folds
-    if line =~ '^\s*\(class\|def\)\s'
+    if line =~ '^\s*\(class\|def\|if\|while\|for\|with\)\s'
 	return ">" . (ind / &sw + 1)
     endif
 

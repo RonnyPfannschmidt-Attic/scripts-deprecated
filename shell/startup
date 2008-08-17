@@ -1,7 +1,10 @@
 
 PATH="$HOME/bin:$HOME/Projects/mercurial/:$PATH"
 PATH="$HOME/Projects/mercurial/contrib/:$PATH"
+PATH="$HOME/llvm/llvm/Debug/bin/:$PATH"
+PATH="$HOME/llvm/llvm/tools/clang/utils:$PATH"
 export PATH
+export DJANGO_SETTINGS_MODULE=settings
 
 PS1="\t | \w $ "
 
@@ -19,8 +22,12 @@ add_pypath() {
 PYTHONPATH="$PYTHONPATH:."
 
 add_pypath $HOME/Projects/mercurial/ 
-add_pypath $HOME/Projects/pocoo-sandbox/{ghrml,pretty,clevercss}/ 
-add_pypath $HOME/lib/python/
+add_pypath $HOME/Projects/gcurrency/ 
+add_pypath $HOME/Projects/VellumUI/
+add_pypath $HOME/Projects/vellum/
+add_pypath $HOME/Projects/rope{,vim,mode}/ 
+add_pypath $HOME/Projects/pocoo-sandbox/{pretty,clevercss}/ 
+add_pypath $HOME/lib/python{,2.5/site-packages}/
 
 PATHS=(
     pygments
@@ -33,7 +40,8 @@ PATHS=(
     FormEncode
     paste
     wtforms
-
+    django
+    dnspython
 )
 for d in ${PATHS[@]}
 do
@@ -51,5 +59,11 @@ done
 
 unset file
 
+# oracle
+export ORACLE_BASE=/usr/lib/oracle/xe/app/oracle/product/10.2.0/
+export ORACLE_HOME=$ORACLE_BASE/client
+
+export LD_LIBRARY_PATH=$ORACLE_HOME/lib
+export PATH="$PATH:$ORACLE_HOME/bin"
 . $S_SCRIPTDIR/aliases
 
