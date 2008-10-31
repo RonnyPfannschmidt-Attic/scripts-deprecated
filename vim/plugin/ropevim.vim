@@ -1,6 +1,9 @@
 function! LoadRope()
 python << EOF
-import ropevim
+try:
+    import ropevim
+except ImportError, e:
+    pass
 EOF
 endfunction
 

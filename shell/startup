@@ -1,10 +1,17 @@
 
-PATH="$HOME/bin:$HOME/Projects/mercurial/:$PATH"
+PATH="$HOME/bin:$HOME/.local/bin:$HOME/Projects/mercurial/:$PATH"
 PATH="$HOME/Projects/mercurial/contrib/:$PATH"
 PATH="$HOME/llvm/llvm/Debug/bin/:$PATH"
 PATH="$HOME/llvm/llvm/tools/clang/utils:$PATH"
+PATH="$HOME/Projects/vellum/bin:$PATH"
+
 export PATH
 export DJANGO_SETTINGS_MODULE=settings
+
+export PKG_CONFIG_PATH=/home/ronny/.local/lib/pkgconfig
+export LD_LIBRARY_PATH=/home/ronny/.local/lib
+export LD_PRELOAD=/usr/lib/libgtk-x11-2.0.so
+export XDG_DATA_DIRS="/home/ronny/.local/share:/usr/share:/usr/local/share"
 
 PS1="\t | \w $ "
 
@@ -21,21 +28,20 @@ add_pypath() {
 
 PYTHONPATH="$PYTHONPATH:."
 
-add_pypath $HOME/Projects/mercurial/ 
-add_pypath $HOME/Projects/gcurrency/ 
+add_pypath $HOME/Projects/mercurial/
 add_pypath $HOME/Projects/VellumUI/
 add_pypath $HOME/Projects/vellum/
-add_pypath $HOME/Projects/rope{,vim,mode}/ 
+add_pypath $HOME/Projects/anyvc/
+add_pypath $HOME/Projects/rope/{main,vim,mode}/
 add_pypath $HOME/Projects/pocoo-sandbox/{pretty,clevercss}/ 
-add_pypath $HOME/lib/python{,2.5/site-packages}/
+add_pypath $HOME/.local/lib/python{,2.5/site-packages}/
 
 PATHS=(
     pygments
     genshi
-    jinja{,2}
+    jinja2
     sqlalchemy/lib
     elixir
-    pocoo
     werkzeug
     FormEncode
     paste
@@ -63,7 +69,7 @@ unset file
 export ORACLE_BASE=/usr/lib/oracle/xe/app/oracle/product/10.2.0/
 export ORACLE_HOME=$ORACLE_BASE/client
 
-export LD_LIBRARY_PATH=$ORACLE_HOME/lib
+export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:$ORACLE_HOME/lib"
 export PATH="$PATH:$ORACLE_HOME/bin"
 . $S_SCRIPTDIR/aliases
 

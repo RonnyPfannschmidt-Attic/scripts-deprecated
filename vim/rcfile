@@ -1,5 +1,5 @@
 set nocompatible " get out of horrible vi-compatible mode
-colorscheme fruity
+colorscheme darkblue
 filetype on " detect the type of file
 set history=1000 " How many lines of history to remember
 "set cf " enable error files and error jumping
@@ -27,7 +27,6 @@ set cindent " do c-style indenting
 set tabstop=4 " tab spacing (settings below are just to unify it)
 set softtabstop=4 " unify
 set shiftwidth=4 " unify
-"set smarttab
 set expandtab " real pacesplease!
 set nowrap " do not wrap lines  
 "set smarttab " use tabs at the start of a line, spaces elsewhere
@@ -64,7 +63,8 @@ au BufEnter,BufNewFile,BufRead *.html set sw=2 sts=2 ts=2 expandtab
 au BufEnter,BufNewFile,BufRead *.template set sw=2 sts=2 ts=2 expandtab filetype=html
 au BufEnter,BufNewFile,BufRead *templates/*.html set filetype=htmldjango sw=2 sts=2 ts=2 expandtab
 au BufEnter,BufNewFile,BufRead *.jinja set filetype=htmldjango sw=2 sts=2 ts=2 expandtab
-au BufEnter,BufNewFile,BufRead *.rst set filetype=rest sw=2 sts=2 ts=2 expandtab
+au BufEnter,BufNewFile,BufRead *.rst set filetype=rest sw=4 sts=4 ts=4 expandtab
+au BufEnter,BufNewFile,BufRead *.vel set filetype=vellum sw=4 sts=4 ts=4 expandtab
 
 
 
@@ -74,10 +74,6 @@ au BufRead,BufNewFile *.vala            setfiletype vala
 au BufRead,BufNewFile *.vapi            setfiletype vala
 
 
-imap <unique> <C-b> <Plug>Jumper
 set list listchars=tab:>-,trail:.,extends:>
 "highlight WhitespaceEOL ctermbg=red guibg=red
 "match WhitespaceEOL /\s\+$/ 
-
-map <F2> :call ToggleSketch()<CR>
-colorscheme darkblue
