@@ -1,25 +1,41 @@
+set title
 set nocompatible " get out of horrible vi-compatible mode
+set hidden " allow unwritten buffers in background
+
 colorscheme darkblue
-filetype on " detect the type of file
-set history=1000 " How many lines of history to remember
-"set cf " enable error files and error jumping
-"set clipboard+=unnamed " turns out I do like is sharing windows clipboard
-"set ffs=unix,dos,mac " support all three, in this order
-filetype plugin on " load filetype plugins
-"set viminfo+=! " make sure it can save viminfo
-"set isk+=_,$,@,%,#,- " none of these should be word dividers, so make them not be
+set backspace=indent,eol,start
+
 syntax on " syntax highlighting on
+filetype on " detect the type of file
+filetype plugin on " load filetype plugins
+filetype indent on
+
+set history=1000 " How many lines of history to remember
 set cmdheight=2 " the command bar is 2 high
+set scrolloff=3
 
 set enc=utf-8
 set fenc=utf-8
 set termencoding=utf-8
 
-"setlocal spell spelllang=de
+set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 
+runtime macros/matchit.vim
 set showmatch " show matching brackets
-set nohlsearch " do not highlight searched for phrases
-set incsearch " BUT do highlight as you type you search phrase
+set hlsearch " do highlight searched for phrases
+set incsearch " do highlight as you type you search phrase
+set ignorecase
+set smartcase
+
+set shortmess=atI
+set visualbell
+
+set wildmenu
+set wildmode=list:longest
+
+set ruler
+set modeline
 
 set ai " autoindent
 "set si " smartindent 
@@ -28,27 +44,12 @@ set tabstop=4 " tab spacing (settings below are just to unify it)
 set softtabstop=4 " unify
 set shiftwidth=4 " unify
 set expandtab " real pacesplease!
-set nowrap " do not wrap lines  
-"set smarttab " use tabs at the start of a line, spaces elsewhere
-"let perl_extended_vars=1 " highlight advanced perl vars inside strings
 
-set modeline
+set list listchars=tab:>-,trail:.,extends:>
 
-filetype indent on
+set pastetoggle=<F9>
 
-"set foldmethod=indent
-
-colorscheme darkblue
-
-set pastetoggle=<F11>
-
-"map <F6> :set ft=perl6
-
-
-highlight WhitespaceEOL ctermbg=red guibg=red
-match WhitespaceEOL /\s\+$/ 
-
-autocmd FileType python set omnifunc=pythoncomplete#Complete
+autocmd FileType python set omnifunc=pythoncomplete#Complete sw=4 sts=4 ts=4 expandtab
 autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
@@ -60,20 +61,11 @@ au BufEnter */scripte/rcfiles/vim set ft=vim
 au BufEnter,BufNewFile,BufRead *.css set sw=2 sts=2 ts=2 expandtab
 au BufEnter,BufNewFile,BufRead *.py set sw=4 sts=4 ts=4 expandtab
 au BufEnter,BufNewFile,BufRead *.html set sw=2 sts=2 ts=2 expandtab
-au BufEnter,BufNewFile,BufRead *.template set sw=2 sts=2 ts=2 expandtab filetype=html
 au BufEnter,BufNewFile,BufRead *templates/*.html set filetype=htmldjango sw=2 sts=2 ts=2 expandtab
 au BufEnter,BufNewFile,BufRead *.jinja set filetype=htmldjango sw=2 sts=2 ts=2 expandtab
-au BufEnter,BufNewFile,BufRead *.rst set filetype=rest sw=4 sts=4 ts=4 expandtab
+au BufEnter,BufNewFile,BufRead *.rst* set filetype=rest sw=2 sts=2 ts=2 expandtab
 au BufEnter,BufNewFile,BufRead *.vel set filetype=vellum sw=4 sts=4 ts=4 expandtab
 
+au BufRead,BufNewFile *.vala            set filetype=vala
+au BufRead,BufNewFile *.vapi            set filetype=vala
 
-
-autocmd BufRead *.vala set efm=%f:%l.%c-%[%^:]%#:\ %t%[%^:]%#:\ %m
-autocmd BufRead *.vapi set efm=%f:%l.%c-%[%^:]%#:\ %t%[%^:]%#:\ %m
-au BufRead,BufNewFile *.vala            setfiletype vala
-au BufRead,BufNewFile *.vapi            setfiletype vala
-
-
-set list listchars=tab:>-,trail:.,extends:>
-"highlight WhitespaceEOL ctermbg=red guibg=red
-"match WhitespaceEOL /\s\+$/ 
