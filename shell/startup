@@ -2,16 +2,24 @@
 PATH="$HOME/bin:$HOME/.local/bin:$HOME/Projects/mercurial/:$PATH"
 PATH="$HOME/Projects/mercurial/contrib/:$PATH"
 PATH="$HOME/llvm/llvm/Debug/bin/:$PATH"
+PATH="$HOME/Projects/py/bin/:$PATH"
 PATH="$HOME/llvm/llvm/tools/clang/utils:$PATH"
 PATH="$HOME/Projects/vellum/bin:$PATH"
+
+CLASSPATH=.
+
+#for package in junit-4 hamcrest-core
+#do
+#    CLASSPATH="$CLASSPATH:$(java-config -p $package)"
+#done
 
 export PATH
 export DJANGO_SETTINGS_MODULE=settings
 
 export PKG_CONFIG_PATH=/home/ronny/.local/lib/pkgconfig
 export LD_LIBRARY_PATH=/home/ronny/.local/lib
-export LD_PRELOAD=/usr/lib/libgtk-x11-2.0.so
 export XDG_DATA_DIRS="/home/ronny/.local/share:/usr/share:/usr/local/share"
+export XDG_DATA_HOME="/home/ronny/.config"
 
 PS1="\t | \w $ "
 
@@ -20,43 +28,30 @@ add_pypath() {
     do
         if [[ ! $PYTHONPATH =~ $path ]]
         then
-            echo Python path $path
-            PYTHONPATH="$PYTHONPATH:$path"
+#           echo Python path $path
+            if [[ -z $PYTHONPATH ]] 
+            then
+                PYTHONPATH=$path
+            else
+                PYTHONPATH="$PYTHONPATH:$path"
+            fi
         fi
     done
 }
 
-PYTHONPATH="$PYTHONPATH:."
+PYTHONPATH=""
 
-add_pypath $HOME/Projects/mercurial/
-add_pypath $HOME/Projects/VellumUI/
-add_pypath $HOME/Projects/vellum/
-add_pypath $HOME/Projects/anyvc/
-add_pypath $HOME/Projects/rope/{main,vim,mode}/
-add_pypath $HOME/Projects/pocoo-sandbox/{pretty,clevercss}/ 
-add_pypath $HOME/.local/lib/python{,2.5/site-packages}/
+add_pypath .
 
-PATHS=(
-    pygments
-    genshi
-    jinja2
-    sqlalchemy/lib
-    elixir
-    werkzeug
-    FormEncode
-    paste
-    wtforms
-    django
-    dnspython
-)
-for d in ${PATHS[@]}
+for project in mercurial dulwich pygtkhelpers kiwi py execnet opster anyvc vellum rope/{main,vim,mode}
 do
-    add_pypath "$HOME/Projects/web/$d/"
+    add_pypath $HOME/Projects/$project/
 done
+add_pypath $HOME/Projects/pocoo-sandbox/{pretty,clevercss}/ 
 
 export PYTHONPATH
 
-. /etc/bash_completion
+[[ -e /etc/bash_completion ]] && . /etc/bash_completion
 
 for file in $S_SCRIPTDIR/functions/*
 do
@@ -72,4 +67,6 @@ export ORACLE_HOME=$ORACLE_BASE/client
 export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:$ORACLE_HOME/lib"
 export PATH="$PATH:$ORACLE_HOME/bin"
 . $S_SCRIPTDIR/aliases
+
+PS1="\t | \w\n$ "
 
