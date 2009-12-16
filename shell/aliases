@@ -1,7 +1,9 @@
 
+alias mq='hg -R $(hg root)/.hg/patches $*'
 alias ls="ls --color=auto"
 
 SUDO_ALIASES=(
+    emerge
     halt
     reboot
     pm{erge,aint}
@@ -13,7 +15,6 @@ SUDO_ALIASES=(
     eix-{sync,update}
     wpa_cli
     unicode_start
-    layman
     apt-get
 )
 
@@ -23,4 +24,5 @@ do
 done
 
 
+alias layman="sudo env -i /usr/bin/layman"
 
