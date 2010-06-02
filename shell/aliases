@@ -1,20 +1,10 @@
 
-alias mq='hg -R $(hg root)/.hg/patches $*'
 alias ls="ls --color=auto"
+alias pypy=/home/ronny/Projects/pypy-trunk/pypy/translator/goal/pypy-c
+alias jython=/home/ronny/.local/jython2.5.1/bin/jython
 
 SUDO_ALIASES=(
-    emerge
-    halt
-    reboot
-    pm{erge,aint}
-    etc-update
     modprobe insmod rmmod
-    iw{list,priv}
-    i{f,w}config
-    ip
-    eix-{sync,update}
-    wpa_cli
-    unicode_start
     apt-get
 )
 
@@ -22,7 +12,4 @@ for com in ${SUDO_ALIASES[@]}
 do
     alias $com="sudo $com"
 done
-
-
-alias layman="sudo env -i /usr/bin/layman"
 
