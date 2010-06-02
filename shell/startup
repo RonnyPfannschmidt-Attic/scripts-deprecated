@@ -23,33 +23,7 @@ export XDG_DATA_HOME="/home/ronny/.config"
 
 PS1="\t | \w $ "
 
-add_pypath() {
-    for path in $@
-    do
-        if [[ ! $PYTHONPATH =~ $path ]]
-        then
-#           echo Python path $path
-            if [[ -z $PYTHONPATH ]] 
-            then
-                PYTHONPATH=$path
-            else
-                PYTHONPATH="$PYTHONPATH:$path"
-            fi
-        fi
-    done
-}
-
-PYTHONPATH=""
-
-add_pypath .
-
-for project in mercurial dulwich pygtkhelpers kiwi py execnet opster anyvc vellum rope/{main,vim,mode}
-do
-    add_pypath $HOME/Projects/$project/
-done
-add_pypath $HOME/Projects/pocoo-sandbox/{pretty,clevercss}/ 
-
-export PYTHONPATH
+export PYTHONPATH="."
 
 [[ -e /etc/bash_completion ]] && . /etc/bash_completion
 
