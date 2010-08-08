@@ -1,4 +1,4 @@
 vserver() {
-    AUTOSSH_POLL=20 autossh ronny.uberhost.de  -t "screen -Ux"
+    AUTOSSH_POLL=20 autossh quamquam.org  -t "screen -Ux"
 }
 
