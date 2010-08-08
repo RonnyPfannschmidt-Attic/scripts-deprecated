@@ -1,5 +1,5 @@
 
-PATH="$HOME/bin:$HOME/.local/bin:$HOME/Projects/mercurial/:$PATH"
+PATH="$HOME/bin:$HOME/.local/bin:$PATH"
 PATH="$HOME/Projects/mercurial/contrib/:$PATH"
 PATH="$HOME/llvm/llvm/Debug/bin/:$PATH"
 PATH="$HOME/Projects/py/bin/:$PATH"
@@ -18,8 +18,6 @@ export DJANGO_SETTINGS_MODULE=settings
 
 export PKG_CONFIG_PATH=/home/ronny/.local/lib/pkgconfig
 export LD_LIBRARY_PATH=/home/ronny/.local/lib
-export XDG_DATA_DIRS="/home/ronny/.local/share:/usr/share:/usr/local/share"
-export XDG_DATA_HOME="/home/ronny/.config"
 
 PS1="\t | \w $ "
 
@@ -34,12 +32,6 @@ done
 
 unset file
 
-# oracle
-export ORACLE_BASE=/usr/lib/oracle/xe/app/oracle/product/10.2.0/
-export ORACLE_HOME=$ORACLE_BASE/client
-
-export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:$ORACLE_HOME/lib"
-export PATH="$PATH:$ORACLE_HOME/bin"
 . $S_SCRIPTDIR/aliases
 
 PS1="\t | \w\n$ "
