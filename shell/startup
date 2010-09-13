@@ -21,8 +21,6 @@ export LD_LIBRARY_PATH=/home/ronny/.local/lib
 
 PS1="\t | \w $ "
 
-export PYTHONPATH="."
-
 [[ -e /etc/bash_completion ]] && . /etc/bash_completion
 
 for file in $S_SCRIPTDIR/functions/*
