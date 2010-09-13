@@ -1,5 +1,5 @@
-set title
 set nocompatible " get out of horrible vi-compatible mode
+set title
 set hidden " allow unwritten buffers in background
 
 colorscheme darkblue
@@ -7,7 +7,7 @@ set backspace=indent,eol,start
 
 syntax on " syntax highlighting on
 filetype on " detect the type of file
-filetype plugin on " load filetype plugins
+filetype plugin on
 filetype indent on
 
 set history=1000 " How many lines of history to remember
@@ -18,8 +18,9 @@ set enc=utf-8
 set fenc=utf-8
 set termencoding=utf-8
 
-set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
-set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+" no swap files
+set nobackup
+set noswapfile
 
 runtime macros/matchit.vim
 set showmatch " show matching brackets
@@ -36,6 +37,8 @@ set wildmode=list:longest
 
 set ruler
 set modeline
+set mouse=a
+
 
 set ai " autoindent
 "set si " smartindent 
