@@ -1,7 +1,6 @@
 
 alias ls="ls --color=auto"
 alias pypy=/home/ronny/Projects/pypy-trunk/pypy/translator/goal/pypy-c
-alias jython=/home/ronny/.local/jython2.5.1/bin/jython
 
 SUDO_ALIASES=(
     modprobe insmod rmmod
