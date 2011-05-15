@@ -6,13 +6,6 @@ PATH="$HOME/Projects/py/bin/:$PATH"
 PATH="$HOME/llvm/llvm/tools/clang/utils:$PATH"
 PATH="$HOME/Projects/vellum/bin:$PATH"
 
-CLASSPATH=.
-
-#for package in junit-4 hamcrest-core
-#do
-#    CLASSPATH="$CLASSPATH:$(java-config -p $package)"
-#done
-
 export PATH
 export DJANGO_SETTINGS_MODULE=settings
 
