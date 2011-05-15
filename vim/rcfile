@@ -2,7 +2,7 @@ set nocompatible " get out of horrible vi-compatible mode
 set title
 set hidden " allow unwritten buffers in background
 
-colorscheme darkblue
+colorscheme slate
 set backspace=indent,eol,start
 
 syntax on " syntax highlighting on
