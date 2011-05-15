@@ -6,7 +6,7 @@ alias t='python ~/Projects/development/tools/t/t.py --task-dir ~/tasks --list ta
 
 SUDO_ALIASES=(
     modprobe insmod rmmod
-    apt-get
+    apt-get aptitude
 )
 
 for com in ${SUDO_ALIASES[@]}
