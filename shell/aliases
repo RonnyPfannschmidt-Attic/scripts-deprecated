@@ -1,6 +1,8 @@
 
 alias ls="ls --color=auto"
-alias pypy=/home/ronny/Projects/pypy-trunk/pypy/translator/goal/pypy-c
+alias pypy=/home/ronny/Projects/pypy/pypy/pypy/translator/goal/pypy-c
+
+alias t='python ~/Projects/development/tools/t/t.py --task-dir ~/tasks --list tasks'
 
 SUDO_ALIASES=(
     modprobe insmod rmmod
