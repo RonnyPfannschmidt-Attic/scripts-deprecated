@@ -1,1 +1,2 @@
 vim/vim-pathogen = [git]git://github.com/tpope/vim-pathogen.git
+vim/bundle/pytest.vim = [git]git://github.com/alfredodeza/pytest.vim.git
