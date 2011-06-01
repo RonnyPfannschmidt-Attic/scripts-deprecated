@@ -5,6 +5,8 @@ set hidden " allow unwritten buffers in background
 colorscheme slate
 set backspace=indent,eol,start
 
+so ~/scripte/vim/vim-pathogen/autoload/pathogen.vim
+call pathogen#infect()
 syntax on " syntax highlighting on
 filetype on " detect the type of file
 filetype plugin on
@@ -73,6 +75,8 @@ au BufEnter,BufNewFile,BufRead *.vel set filetype=vellum sw=4 sts=4 ts=4 expandt
 
 au BufRead,BufNewFile *.vala            set filetype=vala
 au BufRead,BufNewFile *.vapi            set filetype=vala
+
+au BufEnter,BufNewFile,BufRead */vim/rcfile set filetype=vim
 
 au FileType c set noexpandtab
 
