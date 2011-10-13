@@ -1,0 +1,14 @@
+function translate {
+    export PYTHONPATH=.:/home/ronny/Projects/pypy/pypy:$PYTHONPATH
+    /home/ronny/Projects/pypy/pypy-bin/bin/pypy \
+        /home/ronny/Projects/pypy/pypy/pypy/translator/goal/translate.py "$@"
+}
+
+function update-pypy-bin {
+    pushd ~/Projects/pypy/pypy-bin
+    wget http://buildbot.pypy.org/nightly/trunk/pypy-c-jit-latest-linux64.tar.bz2
+    rm -rf bin include lib*
+    tar xf pypy-c-*.bz2 --strip-components=1
+    rm pypy-c*.bz2
+    popd
+}

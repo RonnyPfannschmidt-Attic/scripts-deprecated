@@ -2,7 +2,7 @@ set nocompatible " get out of horrible vi-compatible mode
 set title
 set hidden " allow unwritten buffers in background
 
-colorscheme slate
+colorscheme delek
 set backspace=indent,eol,start
 
 so ~/scripte/vim/vim-pathogen/autoload/pathogen.vim
