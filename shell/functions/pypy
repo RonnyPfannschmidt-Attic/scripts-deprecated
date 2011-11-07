@@ -1,6 +1,6 @@
 function translate {
-    export PYTHONPATH=.:/home/ronny/Projects/pypy/pypy:$PYTHONPATH
-    /home/ronny/Projects/pypy/pypy-bin/bin/pypy \
+    PYTHONPATH=.:/home/ronny/Projects/pypy/pypy:$PYTHONPATH \
+        /home/ronny/Projects/pypy/pypy-bin/bin/pypy \
         /home/ronny/Projects/pypy/pypy/pypy/translator/goal/translate.py "$@"
 }
 
