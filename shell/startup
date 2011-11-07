@@ -7,7 +7,7 @@ PATH="$HOME/llvm/llvm/tools/clang/utils:$PATH"
 PATH="$HOME/Projects/vellum/bin:$PATH"
 
 export PATH
-export DJANGO_SETTINGS_MODULE=settings
+export AUTOSSH_POLL=30
 
 export PKG_CONFIG_PATH=/home/ronny/.local/lib/pkgconfig
 export LD_LIBRARY_PATH=/home/ronny/.local/lib
