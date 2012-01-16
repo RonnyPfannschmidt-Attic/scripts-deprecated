@@ -1,16 +1,24 @@
+declare -A VCS
+VCS=(
+    [hg]="hg pull -u"
+    [git]="git pull"
+    [svn]="svn up"
+    )
+
 update_one() {
-    echo updating $(basename $PWD)
-    if [ -d .hg ]
-    then
-        hg pull -u
-    elif [ -d .git ]
-    then
-        git pull
-    fi
+    for vcs in "${!VCS[@]}"
+    do
+        if [ -d ".$vcs" ]
+        then
+            echo updating $(basename $PWD)
+            ${VCS[$vcs]}
+            break
+        fi
+    done
 }
 
 update() {
-    if [ -d .hg -o -d .git ]
+    if [ -d .hg -o -d .git -o -d .svn ]
     then
         update_one
     else
