@@ -1,17 +1,16 @@
-declare -A VCS
 VCS=(
-    [hg]="hg pull -u"
-    [git]="git pull"
-    [svn]="svn up"
-    )
+    hg "hg pull -u"
+    git "git pull"
+    svn "svn up"
+)
 
 update_one() {
-    for vcs in "${!VCS[@]}"
+    for vcs upcmd in $VCS
     do
         if [ -d ".$vcs" ]
         then
-            echo updating $(basename $PWD)
-            ${VCS[$vcs]}
+            echo updating $PWD:t
+            eval ${upcmd}
             break
         fi
     done

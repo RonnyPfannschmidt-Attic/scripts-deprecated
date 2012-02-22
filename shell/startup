@@ -12,18 +12,12 @@ export AUTOSSH_POLL=30
 export PKG_CONFIG_PATH=/home/ronny/.local/lib/pkgconfig
 export LD_LIBRARY_PATH=/home/ronny/.local/lib
 
-PS1="\t | \w $ "
-
-[[ -e /etc/bash_completion ]] && . /etc/bash_completion
-
 for file in $S_SCRIPTDIR/functions/*
 do
-    . $file
+    source $file
 done
 
 unset file
 
 . $S_SCRIPTDIR/aliases
-
-PS1="\t | \w\n$ "
 

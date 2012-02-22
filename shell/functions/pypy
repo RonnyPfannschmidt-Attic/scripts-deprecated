@@ -26,3 +26,9 @@ function update-pypy-bin {
 function update-pypy3-bin {
     _update_a_pypy_bin pypy3-bin py3k/pypy-c-nojit-latest-linux.tar.bz2
 }
+
+function jitviewer {
+    PYTHONPATH=~/Projects/pypy/pypy:~/Projects/pypy/jitviewer \
+        ~/Projects/pypy/pypy-bin/bin/pypy ~/Projects/pypy/jitviewer/bin/jitviewer.py "$@"
+}
+
