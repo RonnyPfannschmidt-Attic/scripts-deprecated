@@ -17,7 +17,7 @@ python << EOF
 import vim
 import re
 from xmlrpclib import ServerProxy
-srv = ServerProxy('http://paste.pocoo.org/xmlrpc/', allow_none=True)
+srv = ServerProxy('http://bpaste.net/xmlrpc/', allow_none=True)
 
 new_paste = srv.pastes.newPaste
 get_paste = srv.pastes.getPaste
@@ -56,7 +56,7 @@ for key, value in language_mapping.iteritems():
     language_reverse_mapping[value] = key
 
 def paste_id_from_url(url):
-    regex = re.compile(r'^http://paste.pocoo.org/show/([^/]+)/?$')
+    regex = re.compile(r'^http://bpaste.net/show/([^/]+)/?$')
     m = regex.match(url)
     if m is not None:
         return m.group(1)
@@ -114,7 +114,7 @@ else:
 
     lng_code = language_mapping.get(vim.eval('&ft'), 'text')
     paste_id = new_paste(lng_code, code, parent)
-    url = 'http://paste.pocoo.org/show/%s' % paste_id
+    url = 'http://bpaste.net/show/%s' % paste_id
 
     print 'Pasted #%s to %s' % (paste_id, url)
     vim.command(':call setreg(\'+\', %r)' % url)
