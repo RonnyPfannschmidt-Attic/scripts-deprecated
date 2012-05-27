@@ -11,6 +11,7 @@ alias t='python ~/Projects/development/tools/t/t.py --task-dir ~/Dropbox/tasks -
 SUDO_ALIASES=(
     modprobe insmod rmmod
     apt-get aptitude
+    btrfs
 )
 
 for com in ${SUDO_ALIASES[@]}
