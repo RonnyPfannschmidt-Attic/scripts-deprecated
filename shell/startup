@@ -8,6 +8,8 @@ PATH="$HOME/Projects/vellum/bin:$PATH"
 
 export WORKON_HOME=/home/ronny/.local/virtualenvs
 export VIRTUALENVWRAPPER_PYTHON=$WORKON_HOME/tools/bin/python
+. $WORKON_HOME/tools/bin/virtualenvwrapper.sh
+
 workon tools
 
 
