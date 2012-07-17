@@ -1,0 +1,14 @@
+grin
+virtualenvwrapper
+-e /home/ronny/Projects/codespeak/py
+-e /home/ronny/Projects/codespeak/pytest
+-e /home/ronny/Projects/codespeak/execnet
+-e /home/ronny/Projects/codespeak/pytest-xdist
+-e /home/ronny/Projects/codespeak/pytest-codecheckers
+virtualenv
+-e /home/ronny/Projects/codespeak/pytox
+-e /home/ronny/Projects/beonitc/socketpool
+-e /home/ronny/Projects/beonitc/http-parser
+-e /home/ronny/Projects/beonitc/restkit
+-e /home/ronny/Projects/beonitc/couchdbkit
+-e /home/ronny/Projects/thesis/couchdb-compose

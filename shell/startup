@@ -6,11 +6,19 @@ PATH="$HOME/Projects/py/bin/:$PATH"
 PATH="$HOME/llvm/llvm/tools/clang/utils:$PATH"
 PATH="$HOME/Projects/vellum/bin:$PATH"
 
+export WORKON_HOME=/home/ronny/.local/virtualenvs
+export VIRTUALENVWRAPPER_PYTHON=$WORKON_HOME/tools/bin/python
+workon tools
+
+
 export PATH
 export AUTOSSH_POLL=30
 
 export PKG_CONFIG_PATH=/home/ronny/.local/lib/pkgconfig
 export LD_LIBRARY_PATH=/home/ronny/.local/lib
+
+
+zstyle ':vcs_info:*' disable bzr # disable bzr 
 
 for file in $S_SCRIPTDIR/functions/*
 do
