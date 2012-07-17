@@ -2,6 +2,10 @@ grin
 virtualenv
 virtualenvwrapper
 
+logbook
+
+-e /home/ronny/Projects/development/tools/reprtools
+
 -e /home/ronny/Projects/codespeak/py
 -e /home/ronny/Projects/codespeak/pytest
 -e /home/ronny/Projects/codespeak/execnet
@@ -9,11 +13,17 @@ virtualenvwrapper
 -e /home/ronny/Projects/codespeak/pytest-codecheckers
 -e /home/ronny/Projects/codespeak/pytox
 
+gevent
+eventlet
+
 -e /home/ronny/Projects/beonitc/socketpool
 -e /home/ronny/Projects/beonitc/http-parser
 -e /home/ronny/Projects/beonitc/restkit
 -e /home/ronny/Projects/beonitc/couchdbkit
+-e /home/ronny/Projects/codespeak/pytest-couchdbkit
 
+mock
+pyyaml
 -e /home/ronny/Projects/thesis/couchdb-compose
 
 -e /home/ronny/Projects/rope/main
