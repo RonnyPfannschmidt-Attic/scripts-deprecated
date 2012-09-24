@@ -80,5 +80,10 @@ au BufEnter,BufNewFile,BufRead */vim/rcfile set filetype=vim
 
 au FileType c set noexpandtab
 
+python <<EOF
+import sys
+for name in 'main mode vim'.split():
+    sys.path.append('/home/ronny/Projects/rope/' + name)
 
+EOF
 so ~/Projects/rope/vim/ropevim.vim
