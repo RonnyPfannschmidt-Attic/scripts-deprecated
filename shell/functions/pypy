@@ -1,3 +1,4 @@
+
 alias pypy=/home/ronny/Projects/pypy/pypy/pypy/translator/goal/pypy-c
 alias pypy-bin=/home/ronny/Projects/pypy/pypy-bin/bin/pypy
 alias pypy3-bin=/home/ronny/Projects/pypy/pypy3-bin/bin/pypy
@@ -24,12 +25,34 @@ function _update_a_pypy_bin { # name url
     rm pypy-c*.bz2
     popd
 
-
-
 }
+
+
+function develop_installs {
+    local PYTHON=$1
+    shift
+    for arg
+    do
+        pushd $arg
+        if [[ -f setup.py ]]
+        then
+            $PYTHON setup.py develop
+        fi
+        popd
+    done
+}
+
 
 function update-pypy-bin {
     _update_a_pypy_bin pypy-bin trunk/pypy-c-jit-latest-linux64.tar.bz2
+    develop_installs /home/ronny/Projects/pypy/pypy-bin/bin/pypy \
+        /home/ronny/Projects/pypa/distribute \
+        /home/ronny/Projects/pypy/cffi \
+        /home/ronny/Projects/codespeak/py \
+        /home/ronny/Projects/codespeak/pytest \
+        /home/ronny/Projects/codespeak/execnet \
+        /home/ronny/Projects/codespeak/pytest-xdist \
+        /home/ronny/Projects/codespeak/pytest-cache 
 }
 
 function update-pypy3-bin {
