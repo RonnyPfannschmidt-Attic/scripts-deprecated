@@ -4,12 +4,15 @@ virtualenvwrapper
 
 logbook
 
+-e /home/ronny/Projects/mercurial
+
 -e /home/ronny/Projects/development/tools/reprtools
 
 -e /home/ronny/Projects/codespeak/py
 -e /home/ronny/Projects/codespeak/pycmd
 -e /home/ronny/Projects/codespeak/pytest
 -e /home/ronny/Projects/codespeak/execnet
+-e /home/ronny/Projects/codespeak/pytest-boxed
 -e /home/ronny/Projects/codespeak/pytest-xdist
 -e /home/ronny/Projects/codespeak/pytest-cache
 -e /home/ronny/Projects/codespeak/pytest-codecheckers
