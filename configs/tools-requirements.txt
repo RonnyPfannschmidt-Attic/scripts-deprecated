@@ -5,6 +5,8 @@ virtualenvwrapper
 logbook
 
 -e /home/ronny/Projects/mercurial
+-e /home/ronny/Projects/pissoff/hgdistver
+-e /home/ronny/Projects/pissoff/anyvc
 
 -e /home/ronny/Projects/development/tools/reprtools
 
