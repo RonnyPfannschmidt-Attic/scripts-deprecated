@@ -31,6 +31,9 @@ eventlet
 
 mock
 pyyaml
+
+nosier
+
 -e /home/ronny/Projects/thesis/couchdb-compose
 
 -e /home/ronny/Projects/rope/main

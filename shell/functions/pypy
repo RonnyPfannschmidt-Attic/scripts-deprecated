@@ -42,10 +42,9 @@ function develop_installs {
     done
 }
 
-
-function update-pypy-bin {
-    _update_a_pypy_bin pypy-bin trunk/pypy-c-jit-latest-linux64.tar.bz2
-    develop_installs /home/ronny/Projects/pypy/pypy-bin/bin/pypy \
+function pypy-bin-develop-installs {
+    develop_installs \
+        /home/ronny/Projects/pypy/pypy-bin/bin/pypy \
         /home/ronny/Projects/pypa/distribute \
         /home/ronny/Projects/pypy/cffi \
         /home/ronny/Projects/codespeak/py \
@@ -53,6 +52,12 @@ function update-pypy-bin {
         /home/ronny/Projects/codespeak/execnet \
         /home/ronny/Projects/codespeak/pytest-xdist \
         /home/ronny/Projects/codespeak/pytest-cache 
+}
+
+
+function update-pypy-bin {
+    _update_a_pypy_bin pypy-bin trunk/pypy-c-jit-latest-linux64.tar.bz2
+    pypy-bin-develop-installs
 }
 
 function update-pypy3-bin {

@@ -6,12 +6,16 @@ alias pypy-bin=/home/ronny/Projects/pypy/pypy-bin/bin/pypy
 alias pypy3-bin=/home/ronny/Projects/pypy/pypy3-bin/bin/pypy
 alias weechat-curses='echo DEPP'
 
+alias powersave="sudo cpufreq-set -g powersave -r"
+alias ondemand="sudo cpufreq-set -g ondemand -r"
+
 alias t='python ~/Projects/development/tools/t/t.py --task-dir ~/Dropbox/tasks --list tasks'
 
 SUDO_ALIASES=(
     modprobe insmod rmmod
     apt-get aptitude
     btrfs
+    hibernate-ram
 )
 
 for com in ${SUDO_ALIASES[@]}
