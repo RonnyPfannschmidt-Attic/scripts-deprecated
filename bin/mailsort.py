@@ -37,6 +37,8 @@ rules = [
     ML('couchdb-dev', 'dev@couchdb.apache.org', MF('couch-dev')),
 
 
+    ML('flask', 'flask@librelist.com', MF('flask')),
+
     ML('hg', 'mercurial@selenic.com', MF('mercurial-devel')),
     ML('hg dev', 'mercurial-devel@selenic.com', MF('mercurial-devel')),
 
