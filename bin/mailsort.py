@@ -1,6 +1,7 @@
 import argparse
 from mailcrop.imap import connect
 from mailcrop.rules import MailingList as ML, Rule as R
+from mailcrop.matching import Header
 
 
 def pyML(name, suffix=None):
@@ -22,10 +23,11 @@ def MF(name):
 
 rules = [
     pyML('pypy-dev'),
-    pyML('python-ideas', 'ideas'),
-    pyML('distutils-sig', 'distutils'),
+    pyML('python-ideas'),
+    pyML('distutils-sig'),
     pyML('code-quality'),
-    pyML('pytest-dev', 'dev'),
+    pyML('pytest-dev'),
+    pyML('execnet-dev'),
 
     ML('TIP', 'testing-in-python@lists.idyll.org', MF('python.testing')),
     ML('pycologne', 'python-users@uni-koeln.de', MF('python.cologne')),
@@ -43,6 +45,17 @@ rules = [
     ML('hg dev', 'mercurial-devel@selenic.com', MF('mercurial-devel')),
 
     ML('zim-wiki', 'zim-wiki@lists.launchpad.net', MF('zim-wiki')),
+
+    R(
+        'working github',
+        matcher=Header('List-Post', '@reply.github.com'),
+        target='working.gh',
+    ),
+    R(
+        'working bb',
+        matcher=Header('From', 'reply@bitbucket.org'),
+        target='working.bb',
+    ),
 ]
 
 
