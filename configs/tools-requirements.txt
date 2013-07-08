@@ -4,38 +4,31 @@ virtualenvwrapper
 
 logbook
 
--e /home/ronny/Projects/mercurial
--e /home/ronny/Projects/pissoff/hgdistver
--e /home/ronny/Projects/pissoff/anyvc
+-e /home/private/Projects/mercurial
+-e /home/private/Projects/pissoff/hgdistver
+-e /home/private/Projects/pissoff/anyvc
 
--e /home/ronny/Projects/development/tools/reprtools
+-e /home/private/Projects/development/tools/reprtools
 
--e /home/ronny/Projects/codespeak/py
--e /home/ronny/Projects/codespeak/pycmd
--e /home/ronny/Projects/codespeak/pytest
--e /home/ronny/Projects/codespeak/execnet
--e /home/ronny/Projects/codespeak/pytest-boxed
--e /home/ronny/Projects/codespeak/pytest-xdist
--e /home/ronny/Projects/codespeak/pytest-cache
--e /home/ronny/Projects/codespeak/pytest-codecheckers
--e /home/ronny/Projects/codespeak/pytox
+-e /home/private/Projects/codespeak/py
+-e /home/private/Projects/codespeak/pycmd
+-e /home/private/Projects/codespeak/pytest
+-e /home/private/Projects/codespeak/execnet
+-e /home/private/Projects/codespeak/pytest-boxed
+-e /home/private/Projects/codespeak/pytest-xdist
+-e /home/private/Projects/codespeak/pytest-cache
+-e /home/private/Projects/codespeak/pytest-codecheckers
+-e /home/private/Projects/codespeak/pytox
 
-gevent
-eventlet
-
--e /home/ronny/Projects/beonitc/socketpool
--e /home/ronny/Projects/beonitc/http-parser
--e /home/ronny/Projects/beonitc/restkit
--e /home/ronny/Projects/beonitc/couchdbkit
--e /home/ronny/Projects/codespeak/pytest-couchdbkit
+-e /home/private/Projects/beonitc/socketpool
+-e /home/private/Projects/beonitc/http-parser
+-e /home/private/Projects/beonitc/restkit
+-e /home/private/Projects/beonitc/couchdbkit
+-e /home/private/Projects/codespeak/pytest-couchdbkit
 
 mock
 pyyaml
 
 nosier
 
--e /home/ronny/Projects/thesis/couchdb-compose
-
--e /home/ronny/Projects/rope/main
--e /home/ronny/Projects/rope/mode
--e /home/ronny/Projects/rope/vim
+-e /home/private/Projects/thesis/couchdb-compose
