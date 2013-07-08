@@ -11,6 +11,10 @@ alias ondemand="sudo cpufreq-set -g ondemand -r"
 
 alias t='python ~/Projects/development/tools/t/t.py --task-dir ~/Dropbox/tasks --list tasks'
 
+
+
+alias tmux="ssh -t us 'tmux -S .tmux attach-session -t pro'"
+
 SUDO_ALIASES=(
     modprobe insmod rmmod
     apt-get aptitude
