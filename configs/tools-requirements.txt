@@ -4,6 +4,9 @@ virtualenvwrapper
 
 logbook
 
+ssh
+keyring
+
 -e /home/private/Projects/mercurial
 -e /home/private/Projects/pissoff/hgdistver
 -e /home/private/Projects/pissoff/anyvc
@@ -19,6 +22,8 @@ logbook
 -e /home/private/Projects/codespeak/pytest-cache
 -e /home/private/Projects/codespeak/pytest-codecheckers
 -e /home/private/Projects/codespeak/pytox
+
+pytest-logcapture
 
 -e /home/private/Projects/beonitc/socketpool
 -e /home/private/Projects/beonitc/http-parser
