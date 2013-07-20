@@ -16,6 +16,7 @@ def main(options, command, rules):
     imap = connect(command=command)
     imap.select(options.mailbox)
     imap.apply_rules(rules)
+    imap.bye()
 
 
 def MF(name):
