@@ -57,6 +57,11 @@ rules = [
         matcher=Header('From', 'reply@bitbucket.org'),
         target='working.bb',
     ),
+    R(
+        'piraten',
+        matcher=Header('List-Post', 'sm@listen.piraten-thueringen.de'),
+        target='INBOX.Gelesene.piraten',
+        ),
 ]
 
 
