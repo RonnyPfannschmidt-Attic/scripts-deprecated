@@ -1,19 +1,9 @@
 
 PATH="$HOME/bin:$HOME/.local/bin:$PATH"
 PATH="$HOME/Projects/mercurial/contrib/:$PATH"
-PATH="$HOME/llvm/llvm/Debug/bin/:$PATH"
-PATH="$HOME/Projects/py/bin/:$PATH"
-PATH="$HOME/llvm/llvm/tools/clang/utils:$PATH"
-PATH="$HOME/Projects/vellum/bin:$PATH"
-
 export WORKON_HOME=$HOME/.local/virtualenvs
-export VIRTUALENVWRAPPER_PYTHON=$WORKON_HOME/tools/bin/python
-. $WORKON_HOME/tools/bin/virtualenvwrapper.sh
 
-workon tools
-
-
-export PATH
+export PATH="$WORKON_HOME/tools/bin:$PATH"
 export AUTOSSH_POLL=30
 
 export PKG_CONFIG_PATH=$HOME/.local/lib/pkgconfig

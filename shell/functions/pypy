@@ -1,7 +1,8 @@
 
-alias pypy=/home/ronny/Projects/pypy/pypy/pypy/translator/goal/pypy-c
-alias pypy-bin=/home/ronny/Projects/pypy/pypy-bin/bin/pypy
-alias pypy3-bin=/home/ronny/Projects/pypy/pypy3-bin/bin/pypy
+PYPY_BASE=$HOME/Projects/pypy
+alias pypy=$PYPY_BASE/pypy/pypy/translator/goal/pypy-c
+alias pypy-bin=$PYPY_BASE/pypy-bin/bin/pypy
+alias pypy3-bin=$PYPY_BASE/pypy3-bin/bin/pypy
 
 PYPYS=(
     pypy-bin trunk/pypy-c-jit-latest-linux64.tar.bz2
@@ -9,9 +10,9 @@ PYPYS=(
 )
 
 function translate {
-    PYTHONPATH=.:/home/ronny/Projects/pypy/pypy:$PYTHONPATH \
-        /home/ronny/Projects/pypy/pypy-bin/bin/pypy \
-        /home/ronny/Projects/pypy/pypy/pypy/translator/goal/translate.py "$@"
+    PYTHONPATH=.:$PYPY_BASE/pypy:$PYTHONPATH \
+        $PYPY_BASE/pypy-bin/bin/pypy \
+        $PYPY_BASEpypy/pypy/translator/goal/translate.py "$@"
 }
 
 function _update_a_pypy_bin { # name url
@@ -65,7 +66,6 @@ function update-pypy3-bin {
 }
 
 function jitviewer {
-    PYTHONPATH=~/Projects/pypy/pypy:~/Projects/pypy/jitviewer \
-        ~/Projects/pypy/pypy-bin/bin/pypy ~/Projects/pypy/jitviewer/bin/jitviewer.py "$@"
+    PYTHONPATH=$PYPY_BASE/PYPY:$PYPY_BASE/jitviewer pypy-bin $PYPY_BASE/jitviewer/bin/jitviewer.py "$@"
 }
 
