@@ -1,10 +1,9 @@
 grin
 virtualenv
-virtualenvwrapper
+pew
 
 logbook
 
-ssh
 keyring
 
 -e /home/private/Projects/mercurial
@@ -23,7 +22,7 @@ keyring
 -e /home/private/Projects/codespeak/pytest-codecheckers
 -e /home/private/Projects/codespeak/pytox
 
-pytest-logcapture
+pytest-capturelog
 
 -e /home/private/Projects/beonitc/socketpool
 -e /home/private/Projects/beonitc/http-parser
