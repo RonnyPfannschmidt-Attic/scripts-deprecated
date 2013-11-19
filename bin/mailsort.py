@@ -46,6 +46,7 @@ rules = [
     ML('hg dev', 'mercurial-devel@selenic.com', MF('mercurial-devel')),
 
     ML('zim-wiki', 'zim-wiki@lists.launchpad.net', MF('zim-wiki')),
+    ML('identity', 'dev-identity@lists.mozilla.org', MF('identity')),
 
     R(
         'working github',
