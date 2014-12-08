@@ -5,11 +5,15 @@ alias pypy=/home/ronny/Projects/pypy/pypy/pypy/translator/goal/pypy-c
 alias pypy-bin=/home/ronny/Projects/pypy/pypy-bin/bin/pypy
 alias pypy3-bin=/home/ronny/Projects/pypy/pypy3-bin/bin/pypy
 alias weechat-curses='echo DEPP'
+alias vim ~/.local/sublime_text_3/sublime_text
+alias gvim ~/.local/sublime_text_3/sublime_text
+alias subl ~/.local/sublime_text_3/sublime_text
 
+function tmux
+    ssh -t us "tmux -S .tmux attach-session -t pro -d"
+end
 
-alias tmux="ssh -t us 'tmux -S .tmux attach-session -t pro -d'"
-
-set SUDO_ALIASES modprobe insmod rmmod apt-get aptitude btrfs hibernate-ram
+set SUDO_ALIASES modprobe insmod rmmod apt-get aptitude btrfs hibernate-ram docker
 
 for com in $SUDO_ALIASES
     alias $com="sudo $com"
