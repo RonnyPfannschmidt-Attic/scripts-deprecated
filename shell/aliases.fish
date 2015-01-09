@@ -13,7 +13,7 @@ function tmux
     ssh -t us "tmux -S .tmux attach-session -t pro -d"
 end
 
-set SUDO_ALIASES modprobe insmod rmmod apt-get aptitude btrfs hibernate-ram docker
+set SUDO_ALIASES modprobe insmod rmmod btrfs pm-suspend docker yum
 
 for com in $SUDO_ALIASES
     alias $com="sudo $com"
