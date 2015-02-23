@@ -1,3 +1,3 @@
-vim/bundle/.*/
-\.batou/
 \.env/
+fish/fishd\..*
+fish/fish_history
