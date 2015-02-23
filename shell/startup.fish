@@ -1,6 +1,5 @@
 
-set -x PATH $HOME/.local/bin $PATH
-#set -x PATH $HOME/Projects/mercurial/contrib/ $PATH
+set -x PATH $HOME/.local/bin node_modules/.bin $PATH
 set -x WORKON_HOME $HOME/.local/venvs
 
 set -x NLS_LANG .UTF8
