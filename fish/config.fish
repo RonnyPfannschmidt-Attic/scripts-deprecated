@@ -1,2 +1,10 @@
-set -x S_SCRIPTSDIR /home/private/scripts/shell
-source $S_SCRIPTSDIR/startup.fish
+set -x PATH $HOME/.local/bin node_modules/.bin $PATH
+set -x WORKON_HOME $HOME/.local/venvs
+set -x PKG_CONFIG_PATH $HOME/.local/lib/pkgconfig
+
+set SUDO_ALIASES btrfs pm-suspend yum
+
+for com in $SUDO_ALIASES
+    alias $com="sudo $com"
+end
+

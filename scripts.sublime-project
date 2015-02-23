@@ -1,0 +1,14 @@
+{
+	"folders":
+	[
+		{
+			"follow_symlinks": true,
+			"path": ".",
+			"file_exclude_patterns": [
+				"fish/fishd.*",
+				"fish/fish_history",
+				"fish/fish_read_history"
+			]
+		}
+	]
+}

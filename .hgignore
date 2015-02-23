@@ -1,3 +1,5 @@
 \.env/
 fish/fishd\..*
-fish/fish_history
+fish/fish.*_history
+scripts.sublime-workspace
+
