@@ -1,18 +1,7 @@
 
-begin
-    for item in $HOME/.local/bin node_modules/.bin
-        for name in $PATH
-            if test $name = $item
-                set found 1
-                break
-            end
-        end
-
-        if set -q found
-            set -e found
-        else
-            set -gx PATH $item $PATH
-        end
+for item in $HOME/.local/bin node_modules/.bin
+    if not contains $item $PATH
+        set PATH $item $PATH
     end
 end
 
