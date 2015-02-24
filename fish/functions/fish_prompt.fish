@@ -18,7 +18,4 @@ function fish_prompt --description 'Prompt anzeigen'
         $__fish_prompt_hostname ' ' \
         $__fish_prompt_cwd (prompt_pwd) $__fish_prompt_normal \
         '> '
-
-
- 
 end
