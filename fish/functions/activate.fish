@@ -1,7 +1,3 @@
-# This file must be used with "source bin/activate.fish" *from fish* (http://fishshell.com)
-# you cannot run it directly
-
-
 function activate -a ENV -d 'Activate a local or given virtualenv'
 
     if test -z "$ENV"
@@ -25,4 +21,3 @@ function activate -a ENV -d 'Activate a local or given virtualenv'
     set -g __fish_prompt_virtualenv \
         (set_color -b blue white) $ENVNAME (set_color normal)
 end
-
