@@ -1,3 +1,6 @@
+#if test -f ~/.nix-profile/etc/profile.d/nix.fish
+#    . ~/.nix-profile/etc/profile.d/nix.fish
+#   end
 
 for item in $HOME/.local/bin node_modules/.bin
     if not contains $item $PATH
