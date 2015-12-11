@@ -1,4 +1,4 @@
-function deactivate  -d "Exit virtualenv and return to normal shell environment"
+function deactivate -d "Exit virtualenv and return to normal shell environment"
     if set -q VIRTUAL_ENV
         if test "$PATH[1]" = "$VIRTUAL_ENV/bin"
             set -e PATH[1]
