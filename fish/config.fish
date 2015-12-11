@@ -1,7 +1,7 @@
 
-for item in $HOME/.local/bin node_modules/.bin
+for item in $HOME/.local/bin node_modules/.bin $HOME/Projects/tools/arcanist/bin/ $HOME/.npm/bin
     if not contains $item $PATH
-        set PATH $item $PATH
+        set -x PATH $item $PATH
     end
 end
 
@@ -13,4 +13,3 @@ set SUDO_ALIASES btrfs pm-suspend yum
 for com in $SUDO_ALIASES
     alias $com="sudo $com"
 end
-
